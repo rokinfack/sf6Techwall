@@ -1,20 +1,16 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Hello FirstController!{% endblock %}
+{% extends "template.html.twig" %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    
+{% block pageTitle %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/PC/Desktop/Projet-personnel_symfony/sf6Techwall/src/Controller/FirstController.php'|file_link(0) }}">src/Controller/FirstController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/PC/Desktop/Projet-personnel_symfony/sf6Techwall/templates/first/index.html.twig'|file_link(0) }}">templates/first/index.html.twig</a></code></li>
-    </ul>
-</div>
+Mes utilisateurs
+    
 {% endblock %}
+<h1> With love {{ name}} {{lastName}}</h1>
+<p>Bonjour Rostand SF6</p>
+
+Mon url absolue est : {{url('first')}}
+
+{% endblock %}
+    

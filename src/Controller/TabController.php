@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TabController extends AbstractController
 {
-    #[Route('/tab/{nb<\d+>?5}', name: 'app_tab')]
+    #[Route('/tab/{nb<\d+>?5}', name: 'tab')]
     public function index($nb): Response
     {
 

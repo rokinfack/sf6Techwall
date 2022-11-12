@@ -19,18 +19,24 @@ class TodoController extends AbstractController
 
         $session=$request->getSession();
 
+        
+        
+
         if(!$session->has('todos')){
             $todos=[
                 'achat'=>'acheter clé usb',
                 'cours'=>'Finaliser mon cours',
                 'correction'=>'corriger mes examens',
+                'Symfony'=>'terminer avec symfony v6'
             ];
+            
 
 
             $session->set('todos',$todos);
             $this->addFlash('info', "la liste des todos viens d'etre initialisée");
 
         }
+        
 
         return $this->render('todo/index.html.twig');
     }

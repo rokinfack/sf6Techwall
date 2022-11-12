@@ -34,16 +34,20 @@ class FirstController extends AbstractController
     }
 
 
-    #[Route('/sayhello/{name}/{firstName}', name: 'say.hello')]
-    public function sayhello($name,$firstName): Response
+    // #[Route('/sayhello/{name}/{firstName}', name: 'say.hello')]
+    public function sayhello( $name,$firstname): Response
     {
-
-       
        return $this->render('first/hello.html.twig',[
         'nom'=>$name,
-        'prenom'=>$firstName
+        'prenom'=>$firstname,
+        
         
        ]);
+    }
+    #[Route('/template', name: 'template')]
+    public function template(): Response
+    {
+        return $this->render('template.html.twig');
     }
     
     #[Route(
@@ -55,4 +59,26 @@ class FirstController extends AbstractController
         $resultat=$entier1*$entier2;
         return new Response("<h1>$resultat</h1>");
     }
+
+
+    #[Route('/tab/user', name: 'tab_user')]
+    public function user(): Response
+    {
+
+        $suers=[
+            ['name'=>'sellaouiti','firstname'=>'aymen','age'=>39],
+            ['name'=>'Ben slimen','firstname'=>'Ahmed','age'=>30],
+            ['name'=>'Abdennebi','firstname'=>'Mohamed','age'=>39],
+            ['name'=>'Betrant','firstname'=>'Rodrigues','age'=>6],
+
+        ];
+
+        return $this->render('first/user.html.twig',[
+            'users'=>$suers
+         ]);
+        
+    }
+    
+
+
 }

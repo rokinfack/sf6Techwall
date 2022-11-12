@@ -1,17 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('node_modules\bootstrap\dist\css\bootstrap-grid.css')}}">
-    <title>Document</title>
-</head>
-<body>
-<ol class="list-group">
-{% for name, content in app.session.get('todos')}
+{% extends "template.html.twig" %}
 
-</ol>
+{% block body %}
     
-</body>
-</html>
+
+
+
+    
+{% block pageTitle %}
+liste DES TODOS:
+
+ {% endblock %}
+    
+
+
+
+<ol class="list-group-item">
+{% for name,content in app.session.get('todos') %}
+
+<li class="list-group-item">
+{{name}}:{{content}}
+</li>
+{% endfor %}
+</ol>
+{% endblock %}
+
+{% block titre %}
+Ma liste Todo
+    
+{% endblock %}
+
+    
