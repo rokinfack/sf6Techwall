@@ -1,0 +1,19 @@
+{% extends "template.html.twig" %}
+
+
+{% block body %}
+
+<div class="alert alert-sucess">
+
+    {{ personne.name  }} {{ personne.firstname  }} {{ personne.age  }} ans
+    {% if app.user %}
+      <p>Created By : {{ app.user.email}}
+    {% endif %}
+
+</div>
+    
+{% endblock %}
+{% block title %}
+  {{ personne.name  }} {{ personne.firstname  }}
+    
+{% endblock %}
